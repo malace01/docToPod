@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker to Podman Translator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Docker to Podman Translator</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.command.label(class="form-control-label") }}
+                {{ form.command(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+        {% if output %}
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Output:</h4>
+            <p>{{ output }}</p>
+        </div>
+        {% endif %}
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Error:</h4>
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
