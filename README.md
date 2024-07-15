@@ -82,4 +82,16 @@ Make a request to the API:
 
 bash
 
-curl -X POST http://127.0.0.1:5000/run -H "Content-Type: application/json" -d '{"command": "docker 
+curl -X POST http://127.0.0.1:5000/run -H "Content-Type: application/json" -d '{"command": "docker run hello-world"}'
+
+
+
+
+Configuration
+Environment Variables
+NON_ROOT_USER: Specify a non-root user to run commands as.
+ENFORCE_NON_ROOT: Set to true to enforce running commands as a non-root user.
+Plugins
+Plugins can be added to the plugins directory. Each plugin should be a Python file with a modify_command function.
+
+Example plugin (plugins/example_plugin.py)
