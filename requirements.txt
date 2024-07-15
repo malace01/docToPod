@@ -1,3 +1,6 @@
+
 flask
 pyyaml
 argcomplete
+flask-httpauth
+flask-wtf
