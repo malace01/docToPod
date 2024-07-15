@@ -1,6 +1,5 @@
-# docker_to_podman/translator.py
-
 import subprocess
+from .logger import logger
 
 command_map = {
     'docker run': 'podman run',
@@ -19,6 +18,11 @@ def translate_command(docker_command):
 
 def run_command(command):
     translated_command = translate_command(command)
-    print(f"Executing: {translated_command}")
-    result = subprocess.run(translated_command.split(), capture_output=True, text=True)
-    return result.stdout, result.stderr
+    logger.info(f"Executing: {translated_command}")
+    try:
+        result = subprocess.run(translated_command.split(), capture_output=True, text=True, check=True)
+        logger.info(f"Output: {result.stdout}")
+        return result.stdout, result.stderr
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Error: {e.stderr}")
+        return "", e.stderr
