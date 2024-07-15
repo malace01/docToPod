@@ -5,14 +5,19 @@ from flask_httpauth import HTTPBasicAuth
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
+from werkzeug.utils import secure_filename
+import os
 import subprocess
 from .translator import translate_command
+from .compose_translator import run_compose_command
 from .logger import logger
 from .plugins import load_plugins, apply_plugins
 from .security import apply_security_measures
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['UPLOAD_FOLDER'] = 'uploads'
+app.config['ALLOWED_EXTENSIONS'] = {'yml', 'yaml'}
 auth = HTTPBasicAuth()
 
 # Example user data
@@ -27,6 +32,9 @@ def verify_password(username, password):
         return username
 
 plugins = load_plugins()
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 class CommandForm(FlaskForm):
     command = StringField('Docker Command', validators=[DataRequired()])
@@ -53,5 +61,33 @@ def index():
             error = e.stderr
     return render_template('index.html', form=form, output=output, error=error)
 
+@app.route('/upload', methods=['GET', 'POST'])
+@auth.login_required
+def upload_file():
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            file.save(file_path)
+            flash('File successfully uploaded')
+            return redirect(url_for('execute_compose', filename=filename))
+    return render_template('upload.html')
+
+@app.route('/execute_compose/<filename>', methods=['GET', 'POST'])
+@auth.login_required
+def execute_compose(filename):
+    compose_file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    output, error = run_compose_command(compose_file_path, 'up')
+    return render_template('execute_compose.html', output=output, error=error)
+
 if __name__ == '__main__':
+    if not os.path.exists(app.config['UPLOAD_FOLDER']):
+        os.makedirs(app.config['UPLOAD_FOLDER'])
     app.run(debug=True)
