@@ -1,10 +1,47 @@
 # Docker to Podman Translator
- tool translates Docker commands to Podman commands and executes them.
+ translates Docker commands to Podman commands and executes them.
+
+## Features
+
+- Command translation from Docker to Podman
+- Support for Docker Compose files
+- Error logging
+- Plugin system for extensibility
+- Options for running the tool in a secure environment
+- Command autocompletion for CLI
+
 ## Installation
+
 To install the package, run:
+
 ```bash
 pip install .
+Usage
+Command Line
+You can use the tool from the command line:
 
+bash
+
+docker-to-podman "docker run hello-world"
+
+
+Docker Compose
+To translate and run Docker Compose files, use:
+
+bash
+
+docker-to-podman compose path/to/docker-compose.yml up
+Autocompletion
+To enable autocompletion, add the following line to your shell configuration file (e.g., .bashrc or .zshrc):
+
+bash
+
+eval "$(register-python-argcomplete docker-to-podman)"
+Then, source the configuration file:
+
+bash
+
+source ~/.bashrc  # or ~/.zshrc
 ```
 ## CLi ex
 docker-to-podman "docker run hello-world"
