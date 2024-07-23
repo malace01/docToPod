@@ -1,7 +1,6 @@
-
-
 # Docker to Podman Translator
- translates Docker commands to Podman commands and executes them, with a web interface now!
+
+ translates Docker commands to Podman commands and executes them.
 
 ## Features
 
@@ -13,7 +12,7 @@
 - Command autocompletion for CLI
 - Multi-user support with authentication
 - Web interface for command execution
-- File upload for Docker Compose files
+- File upload for Docker Compose files and Dockerfiles
 
 ## Installation
 
@@ -64,18 +63,33 @@ bash
 python -m docker_to_podman.web
 Visit http://127.0.0.1:5000 in your web browser and log in with your credentials.
 
-Upload Docker Compose File
-To upload a Docker Compose file and execute commands on it, visit http://127.0.0.1:5000/upload in your web browser.
+Upload Docker Compose File or Dockerfile
+To upload a Docker Compose file or Dockerfile and execute commands on it, visit http://127.0.0.1:5000/upload in your web browser.
+
+Build and Run Dockerfile
+To build and run a Dockerfile, visit http://127.0.0.1:5000/translate_dockerfile/<filename> after uploading the Dockerfile.
 
 Configuration
 Environment Variables
 NON_ROOT_USER: Specify a non-root user to run commands as.
 ENFORCE_NON_ROOT: Set to true to enforce running commands as a non-root user.
-
-
 Plugins
 Plugins can be added to the plugins directory. Each plugin should be a Python file with a modify_command function.
 
-Example plugin (plugins/example_plugin.py)
+Example plugin (plugins/example_plugin.py):
+
+python
+
+def modify_command(command):
+    if command.startswith('podman run'):
+        command += ' --custom-flag'
+    return command
 Logging
 Logs are written to docker_to_podman.log.
+
+Testing
+To run the tests, use:
+
+bash
+
+python -m unittest discover
