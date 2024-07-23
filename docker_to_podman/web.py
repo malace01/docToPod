@@ -10,6 +10,7 @@ import os
 import subprocess
 from .translator import translate_command
 from .compose_translator import run_compose_command
+from .dockerfile_translator import translate_dockerfile
 from .logger import logger
 from .plugins import load_plugins, apply_plugins
 from .security import apply_security_measures
@@ -17,7 +18,7 @@ from .security import apply_security_measures
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
 app.config['UPLOAD_FOLDER'] = 'uploads'
-app.config['ALLOWED_EXTENSIONS'] = {'yml', 'yaml'}
+app.config['ALLOWED_EXTENSIONS'] = {'yml', 'yaml', 'Dockerfile'}
 auth = HTTPBasicAuth()
 
 # Example user data
@@ -77,8 +78,44 @@ def upload_file():
             file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(file_path)
             flash('File successfully uploaded')
-            return redirect(url_for('execute_compose', filename=filename))
+            if filename == 'Dockerfile':
+                return redirect(url_for('translate_dockerfile', filename=filename))
+            else:
+                return redirect(url_for('execute_compose', filename=filename))
     return render_template('upload.html')
+
+@app.route('/translate_dockerfile/<filename>', methods=['GET', 'POST'])
+@auth.login_required
+def translate_dockerfile_view(filename):
+    dockerfile_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    podmanfile_path = translate_dockerfile(dockerfile_path)
+    with open(podmanfile_path, 'r') as file:
+        podmanfile_content = file.read()
+    return render_template('translate_dockerfile.html', podmanfile_content=podmanfile_content)
+
+@app.route('/build_and_run/<filename>', methods=['GET', 'POST'])
+@auth.login_required
+def build_and_run(filename):
+    podmanfile_path = os.path.join(app.config['UPLOAD_FOLDER'], filename.replace('Dockerfile', 'Podmanfile'))
+    image_name = filename.replace('Dockerfile', '').lower()
+    try:
+        # Build the image using Podman
+        build_command = f'podman build -t {image_name} -f {podmanfile_path}'
+        build_result = subprocess.run(build_command.split(), capture_output=True, text=True, check=True)
+        build_output = build_result.stdout
+
+        # Run the container using Podman
+        run_command = f'podman run {image_name}'
+        run_result = subprocess.run(run_command.split(), capture_output=True, text=True, check=True)
+        run_output = run_result.stdout
+
+        output = build_output + "\n" + run_output
+        error = ""
+    except subprocess.CalledProcessError as e:
+        output = ""
+        error = e.stderr
+
+    return render_template('build_and_run.html', output=output, error=error)
 
 @app.route('/execute_compose/<filename>', methods=['GET', 'POST'])
 @auth.login_required
