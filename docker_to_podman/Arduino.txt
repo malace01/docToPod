@@ -1,0 +1,96 @@
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+
+#define OLED_RESET    -1
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+// Define GPIO pins for controlling the screens
+const int screen1ControlPin = 2;
+const int screen2ControlPin = 3;
+const int screen3ControlPin = 4;
+
+void setup() {
+  // Initialize serial communication
+  Serial.begin(9600);
+
+  // Initialize control pins
+  pinMode(screen1ControlPin, OUTPUT);
+  pinMode(screen2ControlPin, OUTPUT);
+  pinMode(screen3ControlPin, OUTPUT);
+
+  // Turn off all screens initially
+  digitalWrite(screen1ControlPin, LOW);
+  digitalWrite(screen2ControlPin, LOW);
+  digitalWrite(screen3ControlPin, LOW);
+
+  // Initialize the display
+  if(!display.begin(SSD1306_I2C_ADDRESS, OLED_RESET)) {
+    Serial.println(F("SSD1306 allocation failed"));
+    for(;;);
+  }
+  display.display();
+  delay(2000); // Pause for 2 seconds
+}
+
+void loop() {
+  // Update each screen sequentially
+  updateScreen(1, "Display 1");
+  delay(1000);
+  updateScreen(2, "Display 2");
+  delay(1000);
+  updateScreen(3, "Display 3");
+  delay(1000);
+}
+
+void updateScreen(int screenNumber, const char* message) {
+  // Turn off all screens
+  digitalWrite(screen1ControlPin, LOW);
+  digitalWrite(screen2ControlPin, LOW);
+  digitalWrite(screen3ControlPin, LOW);
+
+  // Turn on the selected screen
+  switch(screenNumber) {
+    case 1:
+      digitalWrite(screen1ControlPin, HIGH);
+      break;
+    case 2:
+      digitalWrite(screen2ControlPin, HIGH);
+      break;
+    case 3:
+      digitalWrite(screen3ControlPin, HIGH);
+      break;
+  }
+
+  // Clear the display buffer
+  display.clearDisplay();
+
+  // Set text size and color
+  display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+
+  // Set cursor position
+  display.setCursor(0, 0);
+
+  // Print the message
+  display.println(message);
+
+  // Display the message
+  display.display();
+
+  // Turn off the selected screen
+  switch(screenNumber) {
+    case 1:
+      digitalWrite(screen1ControlPin, LOW);
+      break;
+    case 2:
+      digitalWrite(screen2ControlPin, LOW);
+      break;
+    case 3:
+      digitalWrite(screen3ControlPin, LOW);
+      break;
+  }
+}
