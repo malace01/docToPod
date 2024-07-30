@@ -21,4 +21,38 @@ display.clearDisplay();
 display.display();
 
 your code was actually really close to being correct its just displays were being powered off immediately after being powered on, without sufficient time for initialization.
-By increasing the delay and ensuring the displays are powered on during initialization and updates, the displays can properly show different messages.
+By increasing the delay and ensuring the displays are powered on during initialization and updates, the displays can properly show different messages. 1. Microcontroller Basics
+Arduino Official Website: Getting Started with Arduino
+This guide covers the basics of setting up and programming an Arduino.
+YouTube Channel: Paul McWhorter: Arduino Tutorials
+A series of beginner-friendly tutorials on Arduino.
+2. I2C Communication
+SparkFun: I2C Tutorial
+A comprehensive guide to understanding I2C communication.
+Adafruit Learning System: I2C Communication
+Detailed explanation of the I2C protocol and how to use it with Adafruit products.
+3. OLED Displays
+Adafruit Learning System: SSD1306 OLED Display Guide
+A guide to using SSD1306 OLED displays with Arduino.
+YouTube Channel: GreatScott!: Using OLED Displays with Arduino
+A video tutorial on connecting and programming OLED displays.
+4. Multiplexers
+Adafruit Learning System: TCA9548A I2C Multiplexer Guide
+A guide to using the TCA9548A I2C multiplexer to manage multiple devices with the same I2C address.
+YouTube Channel: Andreas Spiess: I2C Multiplexer Tutorial
+A video tutorial on using I2C multiplexers.
+5. Button Inputs
+Arduino Official Website: Digital Input Pins
+A basic tutorial on reading button inputs with Arduino.
+YouTube Channel: Jeremy Blum: Arduino Button Tutorial
+A video tutorial on using buttons with Arduino.
+6. Putting It All Together
+Instructables: DIY Stream Deck
+A step-by-step guide to building a custom Stream Deck.
+Hackster.io: Custom Stream Deck with Arduino
+A detailed project guide for creating a Stream Deck using Arduino.
+Additional Tools and Software
+Arduino IDE: Download Arduino IDE
+The official development environment for programming Arduino boards.
+Fritzing: Fritzing Software
+A tool for creating circuit diagrams and PCB layouts.
