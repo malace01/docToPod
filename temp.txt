@@ -1,0 +1,78 @@
+Malik Al Morhiby
+
+malik.morhiby@gmail.com | GitHub.com/malace01 and /malik1234
+
+Education:
+ Computer Science BSc - University of St Andrews
+
+Programming Languages: Python, JavaScript, C++, Java,C,
+Web Technologies: HTML, CSS, React, Node.js, Flask, Django, MERN
+Databases: MySQL, PostgreSQL, MongoDB
+Tools and Platforms: Git, Docker, Kubernetes, Azure, AWS, Operating System and ML/AI
+Experience:
+
+Investec Tech intern
+London July - Sept 2024
+
+Optimised High-Performance Asynchronous Applications:
+Led the integration of Python asyncio, resulting in a 40% improvement in concurrency and parallelism for cloud-based microservices.
+Reduced response times by 30% and increased throughput by 25% through efficient task scheduling and execution.
+Architected Scalable Cloud Solutions on Azure:
+Utilised Azure Kubernetes Service (AKS) and Azure Functions to deploy scalable, serverless microservices.
+Achieved dynamic resource allocation and predictive scaling, reducing operational costs by 20% and improving system reliability by 35%.
+Implemented Azure Machine Learning for predictive analytics, enhancing scaling decisions and resource management.
+Advanced GPU Acceleration:
+Implemented PyCUDA and PyOpenCL to offload computational tasks to GPUs.
+Boosted data processing and machine learning performance by 50%, enabling faster model training and inference.
+Streamlined Data Storage and Access:
+Configured and optimised Azure SQL and Cosmos DB for high-performance operations.
+Incorporated in-memory technologies, reducing data retrieval times by 40% and improving query performance by 35%.
+Implemented Real-Time Monitoring and Proactive Scaling:
+Integrated Azure Monitor and Application Insights for real-time analytics and custom alerts.
+Automated scaling based on predictive analytics, reducing downtime by 30% and improving system responsiveness.
+Docker to Podman Translation Tool:
+Developed a tool to translate Docker commands and Dockerfiles to Podman, ensuring compatibility and optimising container management.
+Implemented features for uploading Docker Compose files, translating Dockerfiles, and building/running images using Podman.
+Engaged in Continuous Professional Development:
+Contributed to code reviews and performance optimisation, ensuring adherence to best practices and coding standards.
+Collaborated with senior developers and Azure experts, gaining insights into cutting-edge technologies and methodologies.
+Participated in weekly knowledge-sharing sessions, enhancing team skills and fostering a culture of continuous learning.
+Software Developer, Cricklewood Dental Practice (Part-time)
+London, England, United Kingdom – Mar 2020 to Present
+
+Increased monthly client acquisition by 11% by leveraging JavaScript and MongoDB development skills (MERN Stack) to build a paid online consultation page within the website, leading to more efficient client growth.
+Increased overall query efficiency and high-profile client retention by 30% by providing around-the-clock support and tailor-made treatment plans, while leveraging proprietary technology to stay ahead of the curve.
+Director/ Consultant, OWCA+, twistedMinds,SSG
+2021 - Now
+
+Generated over a million dollars in total revenue by creating and utilising a concept called digital user purchasables.
+Innovatively and profitably scaled a coaching business from private clients to teams to a subscription-based service across multiple games.
+Increased client acquisition and retention through strategic marketing and customer engagement initiatives.
+Certifications:
+
+
+Description of your involvement and achievements.
+Projects:
+
+Optimised High-Performance Asynchronous Applications:
+Led the integration of Python asyncio, resulting in a 40% improvement in concurrency and parallelism for cloud-based microservices.
+Reduced response times by 30% and increased throughput by 25% through efficient task scheduling and execution.
+Architected Scalable Cloud Solutions on Azure:
+Utilised Azure Kubernetes Service (AKS) and Azure Functions to deploy scalable, serverless microservices.
+Achieved dynamic resource allocation and predictive scaling, reducing operational costs by 20% and improving system reliability by 35%.
+Implemented Azure Machine Learning for predictive analytics, enhancing scaling decisions and resource management.
+Advanced GPU Acceleration:
+Implemented PyCUDA and PyOpenCL to offload computational tasks to GPUs.
+Boosted data processing and machine learning performance by 50%, enabling faster model training and inference.
+Streamlined Data Storage and Access:
+Configured and optimised Azure SQL and Cosmos DB for high-performance operations.
+Incorporated in-memory technologies, reducing data retrieval times by 40% and improving query performance by 35%.
+Implemented Real-Time Monitoring and Proactive Scaling:
+Integrated Azure Monitor and Application Insights for real-time analytics and custom alerts.
+Automated scaling based on predictive analytics, reducing downtime by 30% and improving system responsiveness.
+Docker to Podman Translation Tool:
+Developed a tool to translate Docker commands and Dockerfiles to Podman, ensuring compatibility and optimising container management.
+Implemented features for uploading Docker Compose files, translating Dockerfiles, and building/running images using Podman.
+
+Ivy
+Research into Native ML and AI translation
