@@ -1,0 +1,24 @@
+
+
+Timing Issues: The delay after powering on the displays was too short, not giving them enough time to initialize properly.
+
+digitalWrite(powerPin, LOW);
+delay(2000); // This delay might be too short for proper initialization
+Power Control: The displays need to be powered on during initialization and updating, then powered off to avoid conflicts on the I2C bus.
+
+digitalWrite(DISPLAY1_ENABLE, HIGH);
+digitalWrite(DISPLAY2_ENABLE, HIGH);
+digitalWrite(DISPLAY3_ENABLE, HIGH);
+Initialization and Update: The displays were not being properly initialized and updated while powered on.
+
+
+
+if(!display.begin(SSD1306_SWITCHCAPVCC, DEFAULT_OLED_ADDR)) {
+  Serial.println(F("SSD1306 allocation failed"));
+  for(;;);
+}
+display.clearDisplay();
+display.display();
+
+your code was actually really close to being correct its just displays were being powered off immediately after being powered on, without sufficient time for initialization.
+By increasing the delay and ensuring the displays are powered on during initialization and updates, the displays can properly show different messages.
