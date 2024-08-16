@@ -1,4 +1,4 @@
-kiMalik Al Morhiby
+kikiMalik Al Morhiby
 
 malik.morhiby@gmail.com | GitHub.com/malace01 and /malik1234
 my name is malik and currently im a student comp sci st andrews, interning currently at x.My main interest in terms of both career and life goal is to always keep learning in a way that produces practical benefit ( and profit): whether that's contributing to open source AI development tools such as Ivy,working on, researching, documenting and benchmarking cloud computational abilities to pave the way for companies such as brev.dev to exist, using and applying psychology concepts to create and revamp and innovating in the videogame/nft/ 'digital service purchaseables' sphere, or simply creating software that makes life easy and more cost efficient, my goal is and always will be to make maximal impact through both knowledge and interpersonal skills.
@@ -88,4 +88,30 @@ Cultural Acceptance: eSports enjoys a high level of cultural acceptance in South
 
 Government and Corporate Support: The South Korean government and major corporations actively support eSports through funding, infrastructure, and national leagues. This support provides resources and opportunities not as readily available in the US and EU.
 
-Competitive Environment: The eSports scene in South Korea is highly competitive, with a large pool of talented players pushing each other to higher levels of performance. This intense competitive pressure fosters skill development and innovation in gameplay.
+Competitive Environment: The eSports scene in South Korea is highly competitive, with a large pool of talented players pushing each other to higher levels of performance. This intense competitive pressure fosters skill development and innovation in gameplay.Hi! It sounds like you have a solid foundation for your Overwatch coaching business. Here are some suggestions to refine your messaging and strategy:
+
+### Constructive Criticism and Suggestions
+
+1. **Macro-Level Value Proposition**:
+   - **Current Message**: "OWCA might be a coaching business on the micro level, but really what it does on a macro level is allow those who want to improve at Overwatch to buy their time back."
+   - **Suggested Message**: "At OWCA, we don't just coach; we give you back your time. Without coaching, it takes an average of 400 hours to climb a rank in Overwatch, costing you at least $4000 in marginal cost. Our clients achieve the same in just 100 hours, saving 300 hours and $3000. Investing in our coaching is a smart choice, much like investing in a high-quality Herman Miller chair for your long-term health."
+
+2. **Marketing Direction**:
+   - **Current Message**: "Our marketing direction should make it seem like it's irresponsible to not invest the money because the benefit is too great."
+   - **Suggested Message**: "Choosing OWCA is a wise investment in your gaming future. Just as people invest in premium ergonomic chairs for their health, investing in our coaching saves you time and money, making it an essential decision for serious gamers."
+
+3. **Free Classes**:
+   - **Current Message**: "Our free classes are giving an entire pastry rather than a sample of a pastry."
+   - **Suggested Message**: "Our free classes are designed to give you a taste of what we offer—enough to be satisfying but leaving you wanting more. Think of it as a delicious sample that makes you crave the full experience. Our paid classes take this to the next level, offering comprehensive coaching that truly elevates your game."
+
+4. **1:1 Coaching Appeal**:
+   - **Current Message**: "People really like 1:1 coaching because it's in human psyche to seek attention."
+   - **Suggested Message**: "1:1 coaching taps into our natural desire for personalized attention and tailored feedback. For free members, we offer the opportunity to submit a 2-minute VOD segment with a question. We then do a round-robin review of 10 free members, plus a full VOD review from an OWCA coach occasionally to showcase the difference."
+
+### Example of a Similar Service Model
+
+**Duolingo**:
+- **Free Version**: Offers a substantial amount of content for free, enough to get users started and engaged.
+- **Paid Version**: Provides additional features like ad-free learning, offline access, and progress tracking, making the paid version more appealing for serious learners.
+
+By implementing these suggestions, you can create a compelling narrative that highlights the value of your coaching services and encourages potential clients to invest in their gaming improvement. How does this approach sound to you?
